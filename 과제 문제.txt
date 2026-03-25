@@ -1,0 +1,66 @@
+// 문자열 검사 프로그램 만들기
+
+// 키보드로 문자열을 입력받아 아래 조건에 맞는 결과를 출력하는 프로그램을 작성하세요
+
+1. " 입력받은 문자열이 "Korea"이면 -> " 정답입니다" 출력"
+
+2. " 입력받은 문자열에 "Java"가 포함되어 있으면 -> "자바 포함" 출력"
+
+3. "위 두 조건 모두 해당하지 않으면 -> "다릅니다" 출력"
+
+추가 요구 사항 : 
+대소문자 구분하여 검사할 것 (" Java" 와 "java"는 다르게 처리)"
+"입력받는 방법은 Scanner의 nextLine() 사용"
+
+실행 예시
+입력									출력
+Korea														정답입니다
+I love java													자바 포함
+Hello World												다릅니다
+
+포인트:
+equals()로 문자열 비교
+Contains() 로 포함 여부 확인
+조건문 if-else if-else 활용
+
+
+정답 코드.
+-------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class StringCheckTask {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 문자열 입력 받기
+        System.out.print("문자열 입력: ");
+        String input = sc.nextLine();
+
+        // 조건 확인
+        if (input.equals("Korea")) {          // 문자열이 "Korea"와 정확히 같으면
+            System.out.println("정답입니다");
+        } else if (input.contains("java")) {   // 문자열에 "java"가 포함되어 있으면
+            System.out.println("자바 포함");
+        } else {                               // 그 외 경우
+            System.out.println("다릅니다");
+        }
+
+        sc.close();
+    }
+}
+
+실행 예시
+---------------------------------------------------------------------
+Koera
+정답입니다
+
+I love java
+자바 포함
+
+Hello world
+다릅니다.
+
+
+
+
+
