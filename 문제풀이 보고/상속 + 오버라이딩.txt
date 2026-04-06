@@ -1,0 +1,79 @@
+
+문제:
+
+부모 클래스: Vehicle
+필드: speed
+메서드: run() → "차가 달립니다." 출력
+자식 클래스: Car
+run() 오버라이딩 → "자동차가 달립니다." 출력
+자식 클래스: Bike
+run() 오버라이딩 → "자전거가 달립니다." 출력
+
+main에서 각각 객체를 생성하고 run() 메서드를 호출하세요.
+
+예시 출력:
+차가 달립니다.
+자동차가 달립니다.
+자전거가 달립니다.
+
+=====================================
+Vehicle 클래스 
+
+String speed;
+	
+	public Vehicle(String speed) {
+		this.speed = speed;
+	}
+	
+	public void run() {
+		System.out.println("차가 달립니다.");
+	}
+====================================
+Car클래스
+
+public class Car extends Vehicle{
+
+	public Car(String speed) {
+		super(speed);
+	}
+	
+	@Override
+	public void run() {
+		System.out.println("자동차가 달립니다.");
+	}
+
+run에서 오류뜸;	-> 부모클래스 저장하니깐 오류 풀림 시간 날림 *저장 필수*
+
+====================================
+Bike 클래스
+public class Bike extends Vehicle{
+
+	public Bike(String speed) {
+		super(speed);
+	}
+
+	@Override
+	public void run() {
+		System.out.println("자전거가 달립니다.");
+	}
+
+====================================
+main :
+객체 생성하는 법 까먹음
+첫번째 시도: Vehicle v = new Vehicle("차가 달립니다.");
+		v.run();
+오 성공
+
+결과 : 
+Vehicle v = new Vehicle("차가 달립니다.");
+		v.run();
+		Car c = new Car("자동차가 달립니다.");
+		c.run();
+		Bike b = new Bike("자전거가 달립니다.");
+		b.run();
+
+
+
+
+
+

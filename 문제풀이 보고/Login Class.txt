@@ -1,0 +1,84 @@
+문제: 문제풀이형 2번
+
+회원 로그인 클래스 문제
+
+문제:
+
+클래스명: Member
+필드: id(문자열), password(문자열), email(문자열)
+생성자: 모든 필드 초기화
+메서드:
+login(String id, String password) → 입력한 아이디와 비밀번호가 맞으면 "로그인 성공" 출력, 틀리면 "로그인 실패" 출력
+
+main에서 회원 객체를 생성하고, login() 메서드를 테스트해보세요.
+
+예시 출력:
+로그인 성공
+로그인 실패
+
+처음 시도
+String id;
+	String password;
+	String email;
+	
+	public Member(String id, String password, String email) {
+		this.id = id;
+		this.password = password;
+		this.email = email;
+	}
+	
+	public void login(String id,String , String password) {
+		if(String == password)) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	}
+실패: 
+메인에서 오류 떠서 못찾음 
+
+첫번째 매개변수에서 똑같이 id라고 쓰면 this.id와 구분이 안됨
+매개변수 id가 우선 적용되므로 필드 id를 그대로 사용하면 필드 값을 못 읽는다.
+
+두번째 : 문자열 비교는 equals를 사용했어야 함
+그래서 매개변수에는 String inputId , String inputPassword로 바꿈
+조건문에 this.equals(inputId) == this.equals(inputPassword)로 바꿈 
+=================================================
+수정본: 
+String id;
+	String password;
+	String email;
+	
+	public Member(String id, String password, String email) {
+		this.id = id;
+		this.password = password;
+		this.email = email;
+	}
+	
+	public void login(String inputId,String inputPassword) {
+		if(this.equals(inputId) == this.equals(inputPassword)) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	}
+====================================================
+메인: 
+public static void main(String[] args) {
+		
+		Member m1 = new Member("user123", "pass123", "user123@email.com");
+		
+		
+	m1.login("user123", "pass123");
+	m1.login("user123", "pass123");
+	}
+
+====================================================
+문자열 비교할땐 equals
+
+
+
+
+
+
+
