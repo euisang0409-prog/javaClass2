@@ -8,6 +8,8 @@ null에 뭘 적어야 할지 모르겠음
 배열에 크기2개는 만들었음 
 Vehicle[] arr = new Vehicle[2];
 		
-arr[0] = new Car(null);
+arr[0] = new Car(null);  -> null안에 자동차를 넣어야 했다.
 
-런 오버라이딩엔 차가 달립니다 출력했는데 여기서 어떻게 진행하지
+
+
+
