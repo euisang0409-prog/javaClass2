@@ -1,152 +1,58 @@
-select dept_id, count(*)
-from employee
-group by dept_id
-having count(*);
+create table product(
+	product_id INT primary key auto_increment,
+	product_name varchar(100) not null,
+	price INT not null,
+	stock INT not null
+);
 
-select age
-from student
-order by age desc ;
+insert into product(product_name, price, stock)
+values ('노트북', 1200000,10),
+		('마우스',20000,50),
+		('키보드',80000,30);
 
-select dept_id,count(*)
-from employee
-group by dept_id 
-having count >= 2;
+update product
+set price = price * 1.1
+where stock <= 20;
 
-select name,salary
-from employee
-where salary > (select AVG(salary) from employee);
+delete from product
+where price <= 10000;
 
-create index idx_name
-on student(name);
+select product_name,price
+from product
+where price >= 50000;
 
-select name,salary
-from employee
-where salary > (select AVG(salary) from employee);
+select count(*) as total_count,
+	AVG(price) as avg_price,
+	max(price) AS max_price,
+	min(price) AS min_price
+from product;
 
-select s.name, c.class_name
-from student s
-join class c
-on s.class_id = c.id;
+select stock, count(*)
+from product 
+group by 
 
-select dept_id, count(*)
-from employee
-group by dept_id
+select p.product_name, c.category_name
+from product p
+join category c
+on p.category_id = c.category_id;
+
+select product_name,price
+from product
+where price > (select AVG(price) from product);
+
+create view v_product_category_sales as
+select c.category_name,p.product_name,p.price,p.count(*) as total_count
+from product p
+join categorty c
+on p.category_id = c.category_id
+where count(*) >= 2;
+
+select d.dept_name,count(*), AVG(e.salary)
+from employee e
+join department d
+on e.dept_id = d.dept_id
+group by d.dept_name
 having count(*) >= 2;
-
-select name, salary
-from employee
-where salary > (select avg(salary) from employee);
-
-create index idx_name
-on student(name);
-
-select dept_id, count(*)
-from employee
-group by dept_id;
-
-select age
-from student
-order by age desc ;
-
-select dept_id, count(*)
-from employee
-group by dept_id
-having count(*) >= 2;
-
-select s.name, c.class_name
-from stdunet s
-join class c
-on s.class_id = c.id;
-
-delimiter //
-
-create procedure get_price()
-
-begin 
-	declare v_price INT;
-	
-	select price
-	into v_price
-	from product
-	where product_id = 1;
-	
-	select v_price;
-end //
-
-delimiter ;
-
-delimiter //
-
-create procedure get_price(in p_id INT)
-begin
-declare v_price INT;
-
-	select price
-	into v_price
-	from product
-	where product_id = p_id;
-
-	select v_price;
-end //
-
-delimiter ;
-
-
-delimiter //
-
-create procedure check_stock(in p_id int )
-
-begin
-	
-	declare v_stock INT;
-	
-	select stock
-	into v_stock
-	from product
-	where product_id = p_id;
-	
-	if v_stock >= 10 then
-		select '재고충분' as message;
-	else
-		select 	'재고부족' as message;
-	end if;
-	
-end	// 
-
-delimiter ;
-
-delimiter //
-
-create procedure update_product(in p_id int)
-
-begin
-	
-	declare v_stock int;
-	
-	select stock
-	into v_stock
-	from product
-	where product_id = p_id;
-	
-	if v_stock = 0 then
-	select '품절 처리 (삭제)' as message;
-	
-	else
-		update product
-		set price = * 1.1
-		where product_id = p_id;
-	
-	select '가격 10% 인상' as message;
-end if;
-	
-	
-end
-
-	
-	
-
-
-
 
 
 
