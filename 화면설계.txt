@@ -1,0 +1,82 @@
+<h1> = 제목
+<p> = 문단
+<a> = 링크
+<img> = 이미지
+<table> = 표
+<ul> = 목록
+<div> = 영역 구분
+<input> = 입력
+<button> = 버튼
+<form> 입력폼
+
+<h1> = 제목
+<p> = 문단
+<a> = 링크
+<table> = 표
+<img> = 이미지
+<ui> 목록
+<div> = 영역 구분
+<input> = 입력
+<betton> = 버튼
+<form> 입력폼
+
+로그인 h1 </h1>
+아이디 <input type= "text">
+비밀번호 <input type = "text">
+<button>로그인 </button>
+ 
+<a> 링크
+<img> 이미
+<h1> 제목
+<input> 입력
+<table> 표
+<ul> 목록,<ol>
+type="file" 파일 업로드
+<main> = 메인영역
+<nav> = 메뉴
+<footer> = 하단영역
+. = 클래스 선택자
+# = 아이디 선택자
+colspan = 열 합치기
+rowspan = 행 합치기
+
+링크 <a>
+이미지 <img>
+메인 영역 <main>
+제목 <h1>
+입력 <input?
+파일 업로드 tyep = "file"
+메뉴 <nav>
+하단영역 <footer>
+표 <table>
+. 클래스 선택자
+# 아이디 선택자
+colspan 열 합치기
+rowspan 행 합치기
+
+<h1>로그인</h1>
+<input type="text">
+<unput type = "password>
+<button>로그인 </button>
+
+<h1>회원가입</h1>
+<input tyep = "text">
+<input tyep = "password">
+<input tyep = "email">
+<button>가입하기</button>
+
+<table border="1">
+<tr>
+<th>번호</th>
+</tr>
+<tr>
+<td>1</td>
+
+
+
+
+
+
+
+
+
