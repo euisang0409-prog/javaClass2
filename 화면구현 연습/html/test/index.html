@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #111827;
+            color: white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 50px;
+            background: black;
+            border-bottom: 1px solid #374151;
+        }
+
+        .logo{
+            font-size: 28px;
+            font-weight: bold;
+            color: #ef4444;
+        }
+
+        nav{
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a{
+           display: inline-block;
+           transition: all 0.3s ease;
+        }
+
+        nav a:hover{
+            color: red;
+            transform: scale(1.2);
+        }
+
+        .movie-main{
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .poster-box{
+            width: 42%;
+            overflow: hidden;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Movie Preview</div>
+        
+        <nav>
+            <a href="#">상영작</a>
+            <a href="#">예매</a>
+            <a href="#">이벤트</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="movie-main">
+            <div class="poster-box">
+                <img src="https://picsum.photos/500/700?movie-main" alt="영화 포스터 이미지">
+            </div>
+
+            <div class="poostr-info">
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
